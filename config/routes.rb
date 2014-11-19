@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :hashed_macs
-
   resources :users
-
   resources :gawks
 
   # The priority is based upon order of creation: first created -> highest priority.
