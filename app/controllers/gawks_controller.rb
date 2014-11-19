@@ -69,6 +69,6 @@ class GawksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gawk_params
-      params[:gawk]
+      params.require(:gawk).permit(:message, :error_class)
     end
 end
