@@ -1,0 +1,23 @@
+<h1>Listing gawks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gawks.each do |gawk| %>
+      <tr>
+        <td><%= link_to 'Show', gawk %></td>
+        <td><%= link_to 'Edit', edit_gawk_path(gawk) %></td>
+        <td><%= link_to 'Destroy', gawk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gawk', new_gawk_path %>

@@ -1,0 +1,2 @@
+module HashedMacsHelper
+end
