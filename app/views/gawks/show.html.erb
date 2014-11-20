@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_gawk_path(@gawk) %> |
+<%= @gawk.message %>
+<%= @gawk.error_class %>
+
 <%= link_to 'Back', gawks_path %>
