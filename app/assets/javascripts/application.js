@@ -14,6 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-var scheme   = "ws://";
-var uri      = scheme + window.document.location.host + "/";
-var ws       = new WebSocket(uri);
+// var scheme   = "ws://";
+// var uri      = scheme + window.document.location.host + "/";
+// var ws       = new WebSocket(uri);
+
+$(document).ready(function() {
+  function checkForError(){
+    var gawkId = $('li').attr('id');
+    var request = $.ajax({
+      url: '/gawks/refresh',
+      type: 'GET'
+    });
+    request.done(function(response) {
+      $('#gawkward').html(response)
+    });
+  }
+  setInterval(function(){
+    checkForError() // this will run after every 5 seconds
+  }, 5000);
+});

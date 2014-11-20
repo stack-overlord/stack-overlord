@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :gawks, only: [:create, :show, :index]
   resources :sessions, only: [:new, :create, :destroy]
 
+  get 'gawks/refresh' => "gawks#refresh"
+
   get ':mash' => "gawks#show"
 
   post 'websocket/:mash' => "application#create"
