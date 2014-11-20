@@ -18,7 +18,12 @@ end
 
 
 
-def foo
-  900 / 0
+# def foo
+#   900 / 0
+# end
+# foo
+def foo(one, two)
+  1 + 2
 end
-foo
+
+foo(3)

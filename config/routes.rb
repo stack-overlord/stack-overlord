@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  get 'gawks/refresh' => "gawks#refresh"
   resources :hashed_macs, only: [:create]
   resources :users, only: [:new, :edit, :create, :show, :delete]
-  resources :gawks, only: [:create, :show, :index]
+  resources :gawks, only: [:create, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
-  get 'gawks/refresh' => "gawks#refresh"
 
   get ':mash' => "gawks#show"
 

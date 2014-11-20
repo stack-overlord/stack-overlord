@@ -23,7 +23,8 @@ $(document).ready(function() {
     var gawkId = $('li').attr('id');
     var request = $.ajax({
       url: '/gawks/refresh',
-      type: 'GET'
+      type: 'GET',
+      data: {id: gawkId}
     });
     request.done(function(response) {
       $('#gawkward').html(response)
