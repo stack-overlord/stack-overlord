@@ -14,21 +14,12 @@ class GawksController < ApplicationController
 
   def create
     @gawk = Gawk.new(gawk_params)
-    respond_to do |format|
-      if @gawk.save
-        address = Address.find_or_create_by(mash: params[:mash])
-        @gawk.update(address: address)
-        format.html { redirect_to @gawk, notice: 'Gawk was successfully created.' }
-        format.json { render :show, status: :created, location: @gawk }
-      else
-        format.html { render :new }
-        format.json { render json: @gawk.errors, status: :unprocessable_entity }
-      end
-    end
+    @gawk.address = Address.find_or_initialize_by(mash: params[:address_id])
+    @gawk.save
+    head 200
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def last_gawk
       @gawk = @address.gawks.last
     end

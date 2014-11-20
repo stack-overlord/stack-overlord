@@ -18,6 +18,8 @@
 // var uri      = scheme + window.document.location.host + "/";
 // var ws       = new WebSocket(uri);
 
+//
+
 $(document).ready(function() {
   function checkForError(){
     var gawkId = $('li').attr('id');
