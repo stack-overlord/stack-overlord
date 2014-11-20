@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var scheme   = "ws://";
+var uri      = scheme + window.document.location.host + "/";
+var ws       = new WebSocket(uri);

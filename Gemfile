@@ -27,6 +27,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',                   group: :development
 # Websockets
 gem 'faye-websocket'
+# Ruby webserver
+gem 'puma'
+
+gem 'json'
+gem 'rest_client'
+gem 'encrypted_strings'
+gem 'macaddr'
 
 
 # Use ActiveModel has_secure_password
@@ -41,11 +48,7 @@ gem 'faye-websocket'
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'macaddr'
   gem 'rspec-rails'
   gem 'pry'
   gem 'capybara'
-  gem 'json'
-  gem 'rest_client'
-  gem 'encrypted_strings'
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get ':mash' => "gawks#show"
 
+  post 'websocket/:mash' => "application#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

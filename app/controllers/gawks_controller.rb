@@ -1,5 +1,4 @@
 class GawksController < ApplicationController
-  before_action :set_gawk, only: [:show, :edit, :update, :destroy]
 
   def index
     @gawks = Gawk.all
@@ -12,11 +11,10 @@ class GawksController < ApplicationController
 
   def create
     @gawk = Gawk.new(gawk_params)
-    address = Address.new(mash: params[:address])
     respond_to do |format|
       if @gawk.save
-        address.save
-        @gawk.triggers.create(address: address)
+        address = Address.find_or_create_by(mash: params[:mash])
+        @gawk.update(address: address)
         format.html { redirect_to @gawk, notice: 'Gawk was successfully created.' }
         format.json { render :show, status: :created, location: @gawk }
       else

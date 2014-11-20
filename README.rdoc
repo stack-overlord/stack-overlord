@@ -1,28 +1,18 @@
-== README
+# Stack Overlord
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stack Overlord aims to provide you with a comprehensive service that dynamically responds to all of your error message handling needs.
 
-Things you may want to cover:
+Our company missions is to be the final word in solution creating solutions. (And make money!)
 
-* Ruby version
+Stack Overlord Manifesto:
 
-* System dependencies
+1. Include file client/error_test.rb in your pathetic, error-ridden project.
 
-* Configuration
+2. Throw an error.
 
-* Database creation
+3. Follow the provided link.
 
-* Database initialization
+4. ... ?
 
-* How to run the test suite
+5. Profit!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
