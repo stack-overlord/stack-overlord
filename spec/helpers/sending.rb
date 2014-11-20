@@ -7,7 +7,8 @@ at_exit do
  if $!
    error = {
      message: $!.message,
-     error_class: $!.class
+     error_class: $!.class,
+     address: Mac.addr.encrypt
    }
    error = error.to_json
    # RestClient.post "http://cryptic-ocean-2225.herokuapp.com/gawks", error, :content_type => :json, :accept => :json
@@ -20,6 +21,4 @@ end
 def foo
   900 / 0
 end
-
-# foo
-puts hashed_mac = Mac.addr.encrypt
+foo
