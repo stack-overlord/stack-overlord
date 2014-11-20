@@ -1,3 +1,4 @@
+
 require 'json'
 require 'rest_client'
 require 'macaddr'
@@ -16,5 +17,3 @@ at_exit do
    RestClient.post "http://localhost:3000/gawks", error, :content_type => :json, :accept => :json
  end
 end
-
-1/0
