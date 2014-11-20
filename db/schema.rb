@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141120024138) do
   end
 
   create_table "gawks", force: true do |t|
+    t.integer  "address_id"
     t.string   "message"
     t.string   "error_class"
     t.datetime "created_at"
@@ -39,13 +40,6 @@ ActiveRecord::Schema.define(version: 20141120024138) do
 
   create_table "results", force: true do |t|
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "triggers", force: true do |t|
-    t.integer  "address_id"
-    t.integer  "gawk_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

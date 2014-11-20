@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :gawks, only: [:create, :show, :index]
   resources :sessions, only: [:new, :create, :destroy]
 
+  get ':mash' => "gawks#show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
