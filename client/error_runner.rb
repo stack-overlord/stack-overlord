@@ -8,6 +8,7 @@ require_relative 'overlord_client'
 
 def foo(one, two)
   1 + 2
+end
 
 foo(3)
 
