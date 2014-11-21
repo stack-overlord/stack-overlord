@@ -4,8 +4,4 @@ class Gawk < ActiveRecord::Base
   has_many :prospects
   has_many :results, through: :prospects
 
-  def make_query(error, message)
-    "#{error} #{message}"
-  end
-
 end

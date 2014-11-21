@@ -21,6 +21,7 @@ body {
 
 body a {
   color: #E51200;
+  text-decoration: none;
 }
 
 header {
