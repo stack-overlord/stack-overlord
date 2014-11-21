@@ -1,7 +1,15 @@
-require_relative 'error_test'
+require_relative 'overlord_client'
 
-def method (hi,bye)
-  "#{hi}" + "#{bye}"
-end
+# def method (hi,bye)
+#   "#{hi}" + "#{bye}"
+# end
 
-method("hi")
+# method("hi")
+
+def foo(one, two)
+  1 + 2
+
+foo(3)
+
+
+# 1/0
