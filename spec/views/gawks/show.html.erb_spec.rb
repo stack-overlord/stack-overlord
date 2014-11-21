@@ -5,7 +5,7 @@ RSpec.describe "gawks/show", :type => :view do
     @gawk = assign(:gawk, Gawk.create!())
   end
 
-  it "renders attributes in <p>" do
+  it "has a title on the page" do
     render
   end
 end

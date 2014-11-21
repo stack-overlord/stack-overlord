@@ -19,7 +19,6 @@ class GawksController < ApplicationController
     @gawk = Gawk.new(gawk_params)
     @gawk.address = Address.find_or_initialize_by(mash: params[:address_id])
     @gawk.save
-    binding.pry
     class_query = @gawk.error_class
     message_query = @gawk.message
     class_client = StackOverFlowClient.new(class_query)
