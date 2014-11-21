@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require './app/models/stack_overflow_client.rb'
 require 'rails/all'
 require 'uri'
 require 'open-uri'

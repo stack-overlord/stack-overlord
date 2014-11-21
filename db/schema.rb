@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20141120024138) do
 
   create_table "results", force: true do |t|
     t.string   "url"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
