@@ -19,12 +19,8 @@ class GawksController < ApplicationController
     @gawk = Gawk.new(gawk_params)
     @gawk.address = Address.find_or_initialize_by(mash: params[:address_id])
     @gawk.save
-    class_query = @gawk.error_class
-    message_query = @gawk.message
-    class_client = StackOverFlowClient.new(class_query)
-    message_client = StackOverFlowClient.new(message_query)
-    @gawk.results.create!(title: class_client.get_title, url: class_client.get_link)
-    @gawk.results.create!(title: message_client.get_title, url: message_client.get_link)
+    generator = GawkResultsGenerator.new(@gawk)
+    generator.save_solutions
     head 200
   end
 
@@ -38,3 +34,5 @@ class GawksController < ApplicationController
       params.require(:gawk).permit(:message, :error_class)
     end
 end
+
+
