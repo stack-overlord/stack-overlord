@@ -20,7 +20,6 @@ class GawksController < ApplicationController
     @gawk.address = Address.find_or_initialize_by(mash: params[:address_id])
     @gawk.save
     generator = GawkResultsGenerator.new(@gawk)
-    # binding.pry
     generator.save_solutions
     head 200
   end
