@@ -1,6 +1,6 @@
 require 'json'
 
-class StackOverFlowApiClient
+class StackOverflowApiClient
   def initialize(query)
     escaped_query = URI.escape(query)
     @api_url = "https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=3&order=desc&sort=relevance&q=#{escaped_query}&tagged=ruby&site=stackoverflow"
@@ -21,7 +21,7 @@ class StackOverFlowApiClient
   end
 
   def results
-    StackOverFlowResult.new(title, link)
+    StackOverflowResult.new(title, link)
     # this will be required when getting more than one result from #get_and_parse_page
     # results.map{|result| StackOverflowResult.new(result)}
   end
