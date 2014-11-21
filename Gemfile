@@ -34,6 +34,7 @@ gem 'json'
 gem 'rest_client'
 gem 'encrypted_strings'
 gem 'macaddr'
+gem 'bcrypt'
 
 
 # Use ActiveModel has_secure_password

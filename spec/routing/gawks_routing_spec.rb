@@ -2,33 +2,14 @@ require "rails_helper"
 
 RSpec.describe GawksController, :type => :routing do
   describe "routing" do
-
-    it "routes to #index" do
-      expect(:get => "/gawks").to route_to("gawks#index")
-    end
-
-    it "routes to #new" do
-      expect(:get => "/gawks/new").to route_to("gawks#new")
-    end
+    let(:mash) {"b37f67ef57d48e6d1ebbbac1097eea17f05dfbfd"}
 
     it "routes to #show" do
-      expect(:get => "/gawks/1").to route_to("gawks#show", :id => "1")
-    end
-
-    it "routes to #edit" do
-      expect(:get => "/gawks/1/edit").to route_to("gawks#edit", :id => "1")
+      expect(:get => "/#{mash}").to route_to("gawks#show", :mash => mash)
     end
 
     it "routes to #create" do
-      expect(:post => "/gawks").to route_to("gawks#create")
-    end
-
-    it "routes to #update" do
-      expect(:put => "/gawks/1").to route_to("gawks#update", :id => "1")
-    end
-
-    it "routes to #destroy" do
-      expect(:delete => "/gawks/1").to route_to("gawks#destroy", :id => "1")
+      expect(:post => "/addresses/#{mash}/gawks").to route_to("gawks#create", :address_id => mash)
     end
 
   end
