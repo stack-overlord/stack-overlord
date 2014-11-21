@@ -22,7 +22,7 @@
 
 $(document).ready(function() {
   function checkForError(){
-    var gawkId = $('li').attr('id');
+    var gawkId = $('#gawkward').children().attr('id');
     var request = $.ajax({
       url: '/gawks/refresh',
       type: 'GET',
