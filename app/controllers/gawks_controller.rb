@@ -16,10 +16,12 @@ class GawksController < ApplicationController
   end
 
   def create
-    @gawk = Gawk.create(gawk_params)
-    @gawk.address = Address.find_or_create_by(mash: params[:address_id])
-    results = GawkResultsGenerator.new(@gawk)
-    results.save_solutions
+    @gawk = Gawk.new(gawk_params)
+    @gawk.address = Address.find_or_initialize_by(mash: params[:address_id])
+    @gawk.save
+    generator = GawkResultsGenerator.new(@gawk)
+    # binding.pry
+    generator.save_solutions
     head 200
   end
 
@@ -33,6 +35,5 @@ class GawksController < ApplicationController
       params.require(:gawk).permit(:message, :error_class)
     end
 end
-response.each {|result| @gawk.results.create(result)}
 
 

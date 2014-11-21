@@ -6,7 +6,9 @@ class GawkResultsGenerator
   def find_solutions
     error_class_results = StackOverFlowApiClient.new(@gawk.error_class).results
     message_results = StackOverFlowApiClient.new(@gawk.message).results
-    (error_class_results + message_results).uniq
+    [error_class_results, message_results]
+    # only for multiple results
+    # (error_class_results + message_results).uniq
   end
 
   def save_solutions
