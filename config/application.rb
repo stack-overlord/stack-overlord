@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
-require './app/models/stack_overflow_client.rb'
+require './app/models/stack_overflow_api_client.rb'
+require './app/models/gawk_result_generator.rb'
+require './app/models/stack_overflow_result.rb'
 require 'rails/all'
 require 'uri'
 require 'open-uri'
