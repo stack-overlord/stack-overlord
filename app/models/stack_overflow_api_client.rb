@@ -2,13 +2,13 @@ require 'json'
 
 class StackOverflowApiClient
   def initialize(query)
-    escaped_query = URI.escape(query)
-    @api_url = "https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=3&order=desc&sort=relevance&q=#{escaped_query}&tagged=ruby&site=stackoverflow"
+    @escaped_query = URI.escape(query)
     get_and_parse_page
   end
 
   def get_and_parse_page
-    page = open(@api_url) {|page| page.read }
+    api_url = "https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=3&order=desc&sort=relevance&q=#{@escaped_query}&tagged=ruby&site=stackoverflow"
+    page = open(api_url) {|page| page.read }
     @parsed_page = JSON.parse(page)["items"][0]#only looks at first result for now
   end
 
