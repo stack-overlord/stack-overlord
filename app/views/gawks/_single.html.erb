@@ -1,3 +1,4 @@
-
-    <li id=<%= @gawk.id %>>Message: <%= @gawk.message %></li>
-    <li>Error: <%= @gawk.error_class %></li>
+    <% @gawk.results.each do |result| %>
+    <li id="<%= @gawk.id %>">URL: <a href="<%= result.url %>"><%= result.url %></a></li>
+    <li>Title: <%= result.title%></li>
+    <% end %>
