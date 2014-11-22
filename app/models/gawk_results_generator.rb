@@ -4,7 +4,6 @@ class GawkResultsGenerator
   end
 
   def find_solutions
-    # binding.pry
     error_class_results = StackOverflowApiClient.new(@gawk.error_class).results
     message_results = StackOverflowApiClient.new(@gawk.message).results
     [error_class_results, message_results]
