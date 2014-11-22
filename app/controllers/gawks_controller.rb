@@ -1,7 +1,3 @@
-# require_relative '../models/stack_overflow_client'
-
-# load 'stack_overflow_client'
-
 class GawksController < ApplicationController
 
   def refresh
