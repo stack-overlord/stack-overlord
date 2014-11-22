@@ -8,6 +8,7 @@ class StackOverflowApiClient
 
   def get_and_parse_page
     api_url = "https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=3&order=desc&sort=relevance&q=#{@escaped_query}&tagged=ruby&site=stackoverflow"
+    page = open(api_url) { |page| page.read }
     parsed_page = JSON.parse(page)
     if parsed_page["items"].length == 0
       @first_result = { title: "Stack Overflow", link: "http://stackoverflow.com/"}.to_json
