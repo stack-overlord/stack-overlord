@@ -28,7 +28,10 @@ gem 'spring',                   group: :development
 # Websockets
 gem 'faye-websocket'
 # Ruby webserver
-gem 'puma'
+# gem 'puma'
+gem 'thin'
+
+gem 'faye'
 
 gem 'json'
 gem 'rest_client'
