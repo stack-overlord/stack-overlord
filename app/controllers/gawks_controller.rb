@@ -3,12 +3,17 @@
 # load 'stack_overflow_client'
 
 class GawksController < ApplicationController
+  include Tubesock::Hijack
 
   def refresh
-    @address = Gawk.find(params[:id]).address
-    last_gawk
-    render :partial => "gawks/single"
-  end
+    hijack do |tubesock|
+      tubesock
+
+  # def refresh
+  #   @address = Gawk.find(params[:id]).address
+  #   last_gawk
+  #   render :partial => "gawks/single"
+  # end
 
   def show
     @address = Address.find_by(mash: params[:mash])
