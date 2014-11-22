@@ -1,6 +1,26 @@
-  <ul id="<%= @gawk.id %>">
-    <% @gawk.results.each do |result| %>
-    <li>URL: <a href="<%= result.url %>"><%= result.url %></a></li>
-    <li>Title: <%= result.title%></li>
+<ul id="<%= @gawk.id %>">
+  <div id="search">
+  <%= form_tag("/#{params[:mash]}", method: "post") do %>
+    <%= label_tag(:q, "Refine your search message:") %>
+    <%= text_field_tag(:query, @gawk.message, :size => 80) %>
+  <%= submit_tag("Search") %>
+</div>
+  <% end %>
+  <% results = @gawk.results.all %>
+  <% if results.length == 0 %>
+    <p class="large">Sorry, we couldn't find any results for that search</p>
+  <% else %>
+    <li class="large">Search StackOverflow by Error Class(<%= @gawk.error_class %>)</li>
+    <li>Title: <a href="<%= results[0].url %>"><%= results[0].title %></a></li>
+    <div class="divider"></div>
+    <li class="large">Search StackOverflow by Error Message(<%= @gawk.message[0, 20] %>...)</li>
+    <%if results[1].title == "title" %>
+      <% results[1].title = "Sorry, StackOverflow couldn't find any results that matched your message error" %>
+      <% results[1].url = "http://stackoverflow.com" %>
     <% end %>
-  </ul>
+      <li>Title: <a href="<%= results[1].url %>"><%= results[1].title %></a></li>
+      <div class="divider"></div>
+    <li class="large">Search Ruby Docs by Error Class(<%= @gawk.error_class %>)</li>
+    <li>Title: <a href="http://www.ruby-doc.org/core-2.1.5/<%= @gawk.error_class.gsub(/\s+/, "") %>.html">Ruby: <%= @gawk.error_class %></a></li>
+    <% end %>
+</ul>

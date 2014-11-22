@@ -1,4 +1,4 @@
-require_relative 'overlord_client'
+require 'stack_overlord'
 
 # def method (hi,bye)
 #   "#{hi}" + "#{bye}"
@@ -6,10 +6,10 @@ require_relative 'overlord_client'
 
 # method("hi")
 
-def foo(one, two)
-  1 + 2
+# def foo(one, two)
+#   1 + 2
 
-foo(3)
+# foo(3)
 
 
-# 1/0
+1/0
