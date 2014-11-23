@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :addresses, only: [:create] do
-    resources :gawks, only: [:create, :show]
+
+  post ':mash' => "gawks#create"
+
+  resources :addresses, only: [] do
+    resources :gawks, only: [:show]
   end
   resources :users, only: [:new, :edit, :create, :show, :delete]
   resources :sessions, only: [:new, :create, :destroy]
+
+
 
   get ':mash' => "gawks#show"
   # Bad routes from dark times...

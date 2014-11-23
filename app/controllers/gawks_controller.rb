@@ -8,7 +8,7 @@ class GawksController < ApplicationController
 
   def create
     @gawk = Gawk.new(gawk_params)
-    mash = params[:address_id]
+    mash = params[:mash]
     @gawk.address = Address.find_or_initialize_by(mash: mash)
     @gawk.save
     generator = GawkResultsGenerator.new(@gawk)
