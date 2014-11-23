@@ -31,6 +31,8 @@ gem 'faye-websocket'
 # gem 'puma'
 gem 'thin'
 
+gem 'rails_12factor', group: :production
+
 gem 'faye'
 
 gem 'json'
