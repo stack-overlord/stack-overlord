@@ -1,4 +1,5 @@
 class GawksController < ApplicationController
+  include GawksHelper
 
   # def refresh
   #   @address = Gawk.find(params[:id]).address
@@ -7,7 +8,6 @@ class GawksController < ApplicationController
   # end
 
   def show
-    binding.pry
     @address = Address.find_by(mash: params[:mash])
     last_gawk
   end
@@ -19,7 +19,8 @@ class GawksController < ApplicationController
     @gawk.save
     generator = GawkResultsGenerator.new(@gawk)
     generator.save_solutions
-    boradcast(mash, (render :partial => "gawks/single"))
+    partial_gawk = (render :partial => "gawks/single", :formats => [:html])
+    broadcast(mash, partial_gawk)
     head 200
   end
 
