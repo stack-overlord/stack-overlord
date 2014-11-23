@@ -2,7 +2,7 @@ class GawksController < ApplicationController
   include GawksHelper
 
   def refresh
-    @address = Address.find(params[:mash])
+    @address = Address.find_by(mash: params[:mash])
     last_gawk
     render :partial => "gawks/single"
   end

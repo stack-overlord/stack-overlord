@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'gawks/refresh' => "gawks#refresh"
 
   post ':mash' => "gawks#create"
 
-  get 'gawks/refresh' => "gawks#refresh"
   resources :addresses, only: [] do
     resources :gawks, only: [:show]
   end

@@ -28,5 +28,5 @@ $(document).ready(function() {
   }
   setInterval(function(){
     checkForError() // this will run after every 5 seconds
-  }, 5000);
+  }, 3000);
 });
