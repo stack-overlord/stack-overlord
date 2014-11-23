@@ -13,7 +13,7 @@ class StackOverflowApiClient
     length = parsed_page["items"].length
     length = 3 if length > 3
     if length == 0
-      @top_results = { title: "Stack Overflow", link: "http://stackoverflow.com/"}.to_json
+      @top_results = [{ title: "Stack Overflow", link: "http://stackoverflow.com/"}.to_json]
     else
       @top_results = parsed_page["items"][0..(length - 1)] #only looks at first three results for now
     end
