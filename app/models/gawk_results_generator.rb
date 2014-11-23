@@ -7,7 +7,7 @@ class GawkResultsGenerator
     error_class_results = StackOverflowApiClient.new(@gawk.error_class).results
     message_results = StackOverflowApiClient.new(@gawk.message).results
     array = [error_class_results, message_results]
-    array = array.transpose
+    # array = array.transpose if array.length > 1
     return array
     # only for multiple results
     # (error_class_results + message_results).uniq
@@ -15,7 +15,8 @@ class GawkResultsGenerator
 
   def save_solutions
     array = find_solutions
-    array.each {|solution| @gawk.results.create(solution[0].attributes)}
+    array.flatten!
+    array.each {|solution| @gawk.results.create(solution.attributes)}
   end
 
   # def find_all_solutions(gawk_array)
