@@ -26,14 +26,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',                   group: :development
 # Websockets
-gem 'faye-websocket'
+gem 'firebase'
+# gem 'faye-websocket'
 # Ruby webserver
 # gem 'puma'
-gem 'thin'
+# gem 'thin'
 
 gem 'rails_12factor', group: :production
 
-gem 'faye'
+# gem 'faye'
 
 gem 'json'
 gem 'rest_client'

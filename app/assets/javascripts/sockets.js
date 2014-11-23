@@ -1,7 +1,8 @@
 $(function() {
 	var mash = $('#gawkward').children().attr('id');
-  var faye = new Faye.Client('http://www.stackoverlord.com:9292/faye');
-  faye.subscribe('/' + mash, function(data) {
-  	$('#gawkward').html(data)
-  })
+  var gawkSubscribe = new Firebase('https://blazing-fire-7163.firebaseio.com/' + mash);
+
+  gawkSubscribe.on('child_changed', function(data) {
+  $('#gawkward').html(data.val());
+  });
 });
