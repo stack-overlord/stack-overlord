@@ -40,7 +40,7 @@ gem 'rest_client'
 gem 'encrypted_strings'
 gem 'macaddr'
 gem 'bcrypt'
-# gem 'foreman'
+gem 'foreman'
 
 
 # Use ActiveModel has_secure_password

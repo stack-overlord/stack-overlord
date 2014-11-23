@@ -14,19 +14,19 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function() {
-  function checkForError(){
-    var mash = $('#gawkward').children().attr('id');
-    var request = $.ajax({
-      url: '/gawks/refresh',
-      type: 'GET',
-      data: {mash: mash}
-    });
-    request.done(function(response) {
-      $('#gawkward').html(response)
-    });
-  }
-  setInterval(function(){
-    checkForError() // this will run after every 5 seconds
-  }, 3000);
-});
+// $(document).ready(function() {
+//   function checkForError(){
+//     var mash = $('#gawkward').children().attr('id');
+//     var request = $.ajax({
+//       url: '/gawks/refresh',
+//       type: 'GET',
+//       data: {mash: mash}
+//     });
+//     request.done(function(response) {
+//       $('#gawkward').html(response)
+//     });
+//   }
+//   setInterval(function(){
+//     checkForError() // this will run after every 5 seconds
+//   }, 3000);
+// });
