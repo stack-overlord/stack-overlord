@@ -10,25 +10,41 @@ class StackOverflowApiClient
     api_url = "https://api.stackexchange.com/2.2/search/advanced?page=1&pagesize=3&order=desc&sort=relevance&q=#{@escaped_query}&tagged=ruby&site=stackoverflow"
     page = open(api_url) { |page| page.read }
     parsed_page = JSON.parse(page)
-    if parsed_page["items"].length == 0
-      @first_result = { title: "Stack Overflow", link: "http://stackoverflow.com/"}.to_json
+    length = parsed_page["items"].length
+    length = 3 if length > 3
+    if length == 0
+      @top_results = { title: "Stack Overflow", link: "http://stackoverflow.com/"}.to_json
     else
-      @first_result = parsed_page["items"][0] #only looks at first result for now
+      @top_results = parsed_page["items"][0..(length - 1)] #only looks at first three results for now
     end
   end
 
   def title
-    @first_result["title"].gsub("&quot;", "'")
+    titles = []
+    @top_results.each do |result|
+      titles << result["title"].gsub("&quot;", "'")
+    end
+    return titles
   end
 
   def link
-    @first_result["link"]
+    links = []
+    @top_results.each do |result|
+      links << result["link"]
+    end
+    return links
   end
 
   def results
-    StackOverflowResult.new(title, link)
-    # this will be required when getting more than one result from #get_and_parse_page
-    # results.map{|result| StackOverflowResult.new(result)}
+    title
+    link
+    results = []
+    i = 0
+    title.length.times do
+      results << StackOverflowResult.new(title[i], link[i])
+      i += 1
+    end
+    return results
   end
 end
 

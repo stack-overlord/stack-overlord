@@ -39,7 +39,7 @@ body {
 }
 
 .large {
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 body a {
@@ -47,8 +47,12 @@ body a {
   text-decoration: none;
 }
 
-body a :hover {
+body a:hover {
   text-decoration: underline;
+}
+
+body a:visited {
+  color: #00FF00;
 }
 
 #logo {
