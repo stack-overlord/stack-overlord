@@ -11,15 +11,31 @@
     <p class="large">Sorry, we couldn't find any results for that search</p>
   <% else %>
     <li class="large">Search StackOverflow by Error Class(<%= @gawk.error_class %>)</li>
-    <li>Title: <a href="<%= results[0].url %>"><%= results[0].title %></a></li>
+    <% if results[0] %>
+      <li>Title: <a href="<%= results[0].url %>"><%= results[0].title %></a></li>
+    <% end %>
+    <% if results[2] %>
+      <li>Title: <a href="<%= results[2].url %>"><%= results[2].title %></a></li>
+    <% end %>
+    <% if results[4] %>
+      <li>Title: <a href="<%= results[4].url %>"><%= results[4].title %></a></li>
+    <% end %>
     <div class="divider"></div>
-    <li class="large">Search StackOverflow by Error Message(<%= @gawk.message[0, 20] %>...)</li>
+    <li class="large">Search StackOverflow by Error Message(<%= @gawk.message[0, 40] %>...)</li>
     <%if results[1].title == "title" %>
       <% results[1].title = "Sorry, StackOverflow couldn't find any results that matched your message error" %>
       <% results[1].url = "http://stackoverflow.com" %>
     <% end %>
+    <% if results[1] %>
       <li>Title: <a href="<%= results[1].url %>"><%= results[1].title %></a></li>
-      <div class="divider"></div>
+    <% end %>
+    <% if results[3] %>
+      <li>Title: <a href="<%= results[3].url %>"><%= results[3].title %></a></li>
+    <% end %>
+    <% if results[5] %>
+      <li>Title: <a href="<%= results[5].url %>"><%= results[5].title %></a></li>
+    <% end %>
+    <div class="divider"></div>
     <li class="large">Search Ruby Docs by Error Class(<%= @gawk.error_class %>)</li>
     <li>Title: <a href="http://www.ruby-doc.org/core-2.1.5/<%= @gawk.error_class.gsub(/\s+/, "") %>.html">Ruby: <%= @gawk.error_class %></a></li>
   <% end %>
