@@ -1,12 +1,6 @@
 class GawksController < ApplicationController
   include GawksHelper
 
-  # def refresh
-  #   @address = Gawk.find(params[:id]).address
-  #   last_gawk
-
-  # end
-
   def show
     @address = Address.find_by(mash: params[:mash])
     last_gawk

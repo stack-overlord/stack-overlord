@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'gawks/refresh' => "gawks#refresh"
-
   resources :addresses, only: [:create] do
     resources :gawks, only: [:create, :show]
   end
