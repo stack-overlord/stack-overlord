@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post ':mash' => "gawks#create"
 
+  root 'application#index'
+
   resources :addresses, only: [] do
     resources :gawks, only: [:show]
   end
