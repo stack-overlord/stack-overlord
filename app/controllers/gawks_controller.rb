@@ -19,8 +19,8 @@ class GawksController < ApplicationController
     @gawk.save
     generator = GawkResultsGenerator.new(@gawk)
     generator.save_solutions
-    partial_gawk = (render :partial => "gawks/single", :formats => [:html])
-    broadcast(mash, partial_gawk)
+    # partial_gawk = (render :partial => "gawks/single", :formats => [:html])
+    # broadcast(mash, partial_gawk)
     head 200
   end
 
