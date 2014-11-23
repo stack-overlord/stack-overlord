@@ -13,25 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-// var scheme   = "ws://";
-// var uri      = scheme + window.document.location.host + "/";
-// var ws       = new WebSocket(uri);
 
 //
 
-$(document).ready(function() {
-  function checkForError(){
-    var gawkId = $('#gawkward').children().attr('id');
-    var request = $.ajax({
-      url: '/gawks/refresh',
-      type: 'GET',
-      data: {id: gawkId}
-    });
-    request.done(function(response) {
-      $('#gawkward').html(response)
-    });
-  }
-  setInterval(function(){
-    checkForError() // this will run after every 5 seconds
-  }, 5000);
-});
+// $(document).ready(function() {
+//   function checkForError(){
+//     var gawkId = $('#gawkward').children().attr('id');
+//     var request = $.ajax({
+//       url: '/gawks/refresh',
+//       type: 'GET',
+//       data: {id: gawkId}
+//     });
+//     request.done(function(response) {
+//       $('#gawkward').html(response)
+//     });
+//   }
+//   setInterval(function(){
+//     checkForError() // this will run after every 5 seconds
+//   }, 5000);
+// });

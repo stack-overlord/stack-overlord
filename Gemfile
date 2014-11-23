@@ -28,13 +28,17 @@ gem 'spring',                   group: :development
 # Websockets
 gem 'faye-websocket'
 # Ruby webserver
-gem 'puma'
+# gem 'puma'
+gem 'thin'
+
+gem 'faye'
 
 gem 'json'
 gem 'rest_client'
 gem 'encrypted_strings'
 gem 'macaddr'
 gem 'bcrypt'
+
 
 
 # Use ActiveModel has_secure_password
