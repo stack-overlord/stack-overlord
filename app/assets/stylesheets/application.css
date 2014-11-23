@@ -85,7 +85,7 @@ header ul li {
 
 header p {
   display: inline-block;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-size: 34px;
   width: 50%;
 }
