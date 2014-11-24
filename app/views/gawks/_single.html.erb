@@ -10,36 +10,21 @@
   <% if results.length == 0 %>
     <p class="large">Sorry, we couldn't find any results for that search</p>
   <% else %>
-    <% if @gawk.refined %>
-      <% error_message = @gawk.refined %>
-    <% else %>
-      <% error_message = @gawk.message %>
-    <% end %>
+    <% class_errors = results.where(classification: "class") %>
+    <% message_errors = results.where(classification: "message") %>
     <div class="overflow">
-      <li class="large">Search StackOverflow by Error Class</li>
-      <% if results[0] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[0].url %>"><%= results[0].title %></a></li>
-      <% end %>
-      <% if results[2] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[2].url %>"><%= results[2].title %></a></li>
-      <% end %>
-      <% if results[4] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[4].url %>"><%= results[4].title %></a></li>
+      <li> class="large">Search StackOverflow by Error Class</li>
+      <% class_errors.each do |error| %>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= error.url %>"><%= error.title %></a></li>
       <% end %>
     <div class="divider"></div>
       <li class="large">Search StackOverflow by Error Message</li>
-      <%if results[1].title == "title" %>
-        <% results[1].title = "Sorry, StackOverflow couldn't find any results that matched your message error" %>
-        <% results[1].url = "http://stackoverflow.com" %>
+      <%if message_errors[0].title == "title" %>
+        <% message_errors[0].title = "Sorry, StackOverflow couldn't find any results that matched your message error, try refining your search in the box above!" %>
+        <% message_errors[0].url = "http://stackoverflow.com" %>
       <% end %>
-      <% if results[1] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[1].url %>"><%= results[1].title %></a></li>
-      <% end %>
-      <% if results[3] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[3].url %>"><%= results[3].title %></a></li>
-      <% end %>
-      <% if results[5] %>
-        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[5].url %>"><%= results[5].title %></a></li>
+      <% message_errors.each do |error| %>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= error.url %>"><%= error.title %></a></li>
       <% end %>
     </div>
     <div id="ruby">
