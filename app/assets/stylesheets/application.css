@@ -23,7 +23,8 @@ body {
 #search {
   margin-bottom: 20px;
   font-size: 1.2em;
-  display: none;
+  position: absolute;
+  top: -20px;
 }
 
 .divider {
@@ -35,10 +36,33 @@ body {
 #gawkward ul li {
   list-style: none;
   margin-top: 5px;
+  margin-bottom: -5px;
+}
+
+#gawkward ul {
+  list-style: none;
+}
+
+.overflow {
+  width: 45%;
+  display: inline-block;
+}
+
+#ruby {
+  width: 35%;
+  display: inline-block;
+  position: absolute;
+}
+
+.so_logo {
+  max-height: 30px;
+  width: auto;
+  padding-top: 15px;
 }
 
 .large {
   font-size: 1em;
+  padding-bottom: 5px;
 }
 
 body a {
@@ -88,13 +112,9 @@ header p {
   width: 50%;
 }
 
-/*#nonexistent {
-  display: none;
-}*/
-
 .container {
   position: relative;
   top: 30px;
-  width: 70%;
+  width: 100%;
   padding: 25px 50px 40px;
 }

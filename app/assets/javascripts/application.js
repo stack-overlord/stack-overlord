@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $("#gawkward").on('submit', "#search form", function(event) {
+    event.preventDefault();
+    request = $.ajax ({
+      url: $(this).attr('action'),
+      type: 'PUT',
+      data: $(this).serialize()
+    });
+    request.done(function(response) {
+      $("#gawkward").html(response);
+    });
+  });
+});

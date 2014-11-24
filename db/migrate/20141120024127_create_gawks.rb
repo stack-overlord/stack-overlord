@@ -4,6 +4,7 @@ class CreateGawks < ActiveRecord::Migration
       t.belongs_to :address
 
       t.string :message
+      t.string :refined
       t.string :error_class
 
       t.timestamps
