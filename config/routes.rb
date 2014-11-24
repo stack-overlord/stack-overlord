@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
 
   get 'gawks/refresh' => "gawks#refresh"
-
   post ':mash' => "gawks#create"
-
   root 'application#index'
-
-  resources :addresses, only: [] do
-    resources :gawks, only: [:show]
-  end
+  resources :gawks, only: [:show, :update]
   resources :users, only: [:new, :edit, :create, :show, :delete]
   resources :sessions, only: [:new, :create, :destroy]
 
