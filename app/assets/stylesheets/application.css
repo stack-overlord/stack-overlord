@@ -9,9 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
-
-
+ *= require font-awesome
  */
 
 body {
@@ -35,8 +33,12 @@ body {
 
 #gawkward ul li {
   list-style: none;
-  margin-top: 5px;
-  margin-bottom: -5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.fa-stack-overflow {
+  color: #FCE41E;
 }
 
 #gawkward ul {
@@ -52,6 +54,15 @@ body {
   width: 35%;
   display: inline-block;
   position: absolute;
+}
+
+#ruby img {
+  width: 60px;
+  height: 60px;
+}
+
+.ruby_docs p {
+  position: relative;
 }
 
 .so_logo {

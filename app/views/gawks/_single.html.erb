@@ -18,13 +18,13 @@
     <div class="overflow">
       <li class="large">Search StackOverflow by Error Class</li>
       <% if results[0] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[0].url %>"><%= results[0].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[0].url %>"><%= results[0].title %></a></li>
       <% end %>
       <% if results[2] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[2].url %>"><%= results[2].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[2].url %>"><%= results[2].title %></a></li>
       <% end %>
       <% if results[4] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[4].url %>"><%= results[4].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[4].url %>"><%= results[4].title %></a></li>
       <% end %>
     <div class="divider"></div>
       <li class="large">Search StackOverflow by Error Message</li>
@@ -33,18 +33,17 @@
         <% results[1].url = "http://stackoverflow.com" %>
       <% end %>
       <% if results[1] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[1].url %>"><%= results[1].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[1].url %>"><%= results[1].title %></a></li>
       <% end %>
       <% if results[3] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[3].url %>"><%= results[3].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[3].url %>"><%= results[3].title %></a></li>
       <% end %>
       <% if results[5] %>
-        <li><img class="so_logo" src="/assets/s-o-icon.png"><a href="<%= results[5].url %>"><%= results[5].title %></a></li>
+        <li><%= fa_icon "stack-overflow" %> <a href="<%= results[5].url %>"><%= results[5].title %></a></li>
       <% end %>
     </div>
     <div id="ruby">
-      <li class="large">Search Ruby Docs by Error Class(<%= @gawk.error_class %>)</li>
-      <li>Title: <a href="http://www.ruby-doc.org/core-2.1.5/<%= @gawk.error_class.gsub(/\s+/, "") %>.html">Ruby: <%= @gawk.error_class %></a></li>
+        <li class="ruby_docs"><a href="http://www.ruby-doc.org/core-2.1.5/<%= @gawk.error_class.gsub(/\s+/, "") %>.html"><img src="/assets/ruby.png" alt="Stack Overlord"><p><%= @gawk.error_class %></p></a></li>
     </div>
   <% end %>
 </ul>
