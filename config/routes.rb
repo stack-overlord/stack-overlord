@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'gawks/refresh' => "gawks#refresh"
-  post ':mash' => "gawks#create"
   root 'application#index'
-  resources :gawks, only: [:show, :update]
+  post ':mash' => "gawks#create"
+  resources :gawks, only: [:create, :show, :update]
   resources :users, only: [:new, :edit, :create, :show, :delete]
   resources :sessions, only: [:new, :create, :destroy]
-
-
-
   get ':mash' => "gawks#show"
+
+
   # Bad routes from dark times...
 
   # post 'websocket/:mash' => "application#create"

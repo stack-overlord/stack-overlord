@@ -37,11 +37,7 @@ gem 'rails_12factor', group: :production
 # gem 'faye'
 
 gem 'json'
-gem 'rest_client'
-gem 'encrypted_strings'
-gem 'macaddr'
 gem 'bcrypt'
-gem 'foreman'
 
 
 # Use ActiveModel has_secure_password
