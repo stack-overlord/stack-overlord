@@ -63,6 +63,8 @@ body {
 
 .ruby_docs p {
   position: relative;
+  top: -65px;
+  left: 60px;
 }
 
 .so_logo {
