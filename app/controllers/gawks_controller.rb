@@ -6,7 +6,7 @@ class GawksController < ApplicationController
     last_gawk
   end
 
-  def create # this needs to be changed to accomadate multiple save methods - GawkResultsGenerator
+  def create
     @gawk = Gawk.new(gawk_params)
     mash = params[:mash]
     @gawk.address = Address.find_or_initialize_by(mash: mash)
