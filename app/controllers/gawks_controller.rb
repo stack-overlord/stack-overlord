@@ -18,7 +18,7 @@ class GawksController < ApplicationController
     head 200
   end
 
-  def update
+  def update # this needs to be changed to save only messages - GawkResultsGenerator
     old_gawk = Gawk.find(params[:id])
     old_gawk.update(refined: params[:gawk][:refined])
     new_gawk = Gawk.create!(address_id: old_gawk.address_id, error_class: old_gawk.error_class, message: old_gawk.refined)
